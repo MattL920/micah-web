@@ -173,7 +173,6 @@
                                     </div>
                                 </a>
     					    </li>
-    					    
     				    </ul>
     				</div>
                     <div class="jcarousel-scroll">
@@ -188,7 +187,65 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span12">
+                <div class="carousel-outer">
+                    <div class="jcarousel-scroll">
+                        <a href="#" id="carousel3-prev">&laquo;</a>
+                    </div>
+    				<div id="carousel3" class="carousel">
+    				    <ul class="thumbnails">
+    					    <li class="slide">
+    						    <a href="files/1_Hyde_Rugby_Trailor.mov" class="thumbnail clip">
+                                    <img src="img/1_Hyde_Rugby_Trailor.png" alt="">
+                                    <div>
+                                        <h4>"Touch Pause Engage"</h4><p>Trailer</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/2_ThatsWhatSheToldMe_2_Film_Excerpts.mov" class="thumbnail clip">
+                                    <img src="img/2_ThatsWhatSheToldMe_2_Film_Excerpts.png" alt="">
+                                    <div>
+                                        <h4>"That's What She Told Me"</h4><p>Short Film (2 Excerpts)</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/Hearts_Of_Men_FinalMixWithSound_lores.mov" class="thumbnail clip">
+                                    <img src="img/Hearts_Of_Men_FinalMixWithSound_lores.png" alt="">
+                                    <div>
+                                        <h4>"Hearts of Men"</h4><p>Short Film</p>
+                                    </div>
+                                </a>
+    					    </li>
+                            <li class="slide">
+    						    <a href="files/The_Saddest_Day.mov" class="thumbnail clip">
+                                    <img src="img/The_Saddest_Day.png" alt="">
+                                    <div>
+                                        <h4>"The Saddest Day"</h4><p>Animation</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/Change_Video_Excerpt.mov" class="thumbnail clip">
+                                    <img src="img/Change_Video_Excerpt.png" alt="">
+                                    <div>
+                                        <h4>"Change"</h4><p>Video Excerpt</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/AntennaHead__FunDrum_.mov" class="thumbnail clip">
+                                    <img src="img/AntennaHead__FunDrum_.png" alt="">
+                                    <div>
+                                        <h4>AntennaHead</h4><p>FunDrum (Animation)</p>
+                                    </div>
+                                </a>
+    					    </li>
+    				    </ul>
+    				</div>
+                    <div class="jcarousel-scroll">
+                        <a href="#" id="carousel3-next">&raquo;</a>
+                    </div>
                 </div>
             </div>
             
@@ -243,6 +300,16 @@
                     initCallback: function(carousel) {
                         $('#carousel2-next').bind('click', function(){ carousel.next(); return false; });
                         $('#carousel2-prev').bind('click', function(){ carousel.prev(); return false; });
+                    },
+                    buttonNextHTML: null,
+                    buttonPrevHTML: null
+                });
+                
+                $("#carousel3").jcarousel({
+                    scroll: 1,
+                    initCallback: function(carousel) {
+                        $('#carousel3-next').bind('click', function(){ carousel.next(); return false; });
+                        $('#carousel3-prev').bind('click', function(){ carousel.prev(); return false; });
                     },
                     buttonNextHTML: null,
                     buttonPrevHTML: null
