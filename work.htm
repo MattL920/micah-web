@@ -119,6 +119,75 @@
 				</div>
 			</div>
 			<div class="row">
+                <div class="carousel-outer">
+                    <div class="jcarousel-scroll">
+                        <a href="#" id="carousel2-prev">&laquo;</a>
+                    </div>
+    				<div id="carousel2" class="carousel">
+    				    <ul class="thumbnails">
+    					    <li class="slide">
+    						    <a href="files/Movado_EBEL_ForReel_loresH264_.mov" class="thumbnail clip">
+                                    <img src="img/Movado_EBEL_ForReel_loresH264.png" alt="">
+                                    <div>
+                                        <h4>Movado</h4><p>For Me</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/USAA__Retirement_.mov" class="thumbnail clip">
+                                    <img src="img/USAA__Retirement_.png" alt="">
+                                    <div>
+                                        <h4>USAA</h4><p>Retirement</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/Reebok__Trilla_.mov" class="thumbnail clip">
+                                    <img src="img/Reebok__Trilla_.png" alt="">
+                                    <div>
+                                        <h4>Reebok</h4><p>Trilla</p>
+                                    </div>
+                                </a>
+    					    </li>
+                            <li class="slide">
+    						    <a href="files/Accountemps_Tree.mov" class="thumbnail clip">
+                                    <img src="img/Accountemps_Tree.png" alt="">
+                                    <div>
+                                        <h4>Accountemps</h4><p>Tree</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/REI__Fine_Dining_.mov" class="thumbnail clip">
+                                    <img src="img/REI__Fine_Dining_.png" alt="">
+                                    <div>
+                                        <h4>REI</h4><p>Fine Dining</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    <li class="slide">
+    						    <a href="files/Vixens_Series_Promo.mov" class="thumbnail clip">
+                                    <img src="img/Vixens_Series_Promo.png" alt="">
+                                    <div>
+                                        <h4>Vixens</h4><p>Series Promo</p>
+                                    </div>
+                                </a>
+    					    </li>
+    					    
+    				    </ul>
+    				</div>
+                    <div class="jcarousel-scroll">
+                        <a href="#" id="carousel2-next">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="row">
+				<div class="section span12">
+                    <h3 class="pull-left">long format</h3> <hr/>
+				</div>
+			</div>
+			<div class="row">
 				<div class="span12">
                 </div>
             </div>
@@ -133,16 +202,6 @@
                 </div>
             </div>
             
-			<div class="row">
-				<div class="section span12">
-                    <h3 class="pull-left">long format</h3> <hr/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="span12">
-                </div>
-            </div>
-			
 		</div>
 
 		<div class="footer">
@@ -168,15 +227,23 @@
         <script src="js/jquery.colorbox-min.js"></script>
         
         <script type="text/javascript">
-            function carousel_callback(carousel) {
-                $('#carousel1-next').bind('click', function(){ carousel.next(); return false; });
-                $('#carousel1-prev').bind('click', function(){ carousel.prev(); return false; });
-            };
-            
             $(document).ready(function() {
                 $("#carousel1").jcarousel({
                     scroll: 1,
-                    initCallback: carousel_callback,
+                    initCallback: function(carousel) {
+                        $('#carousel1-next').bind('click', function(){ carousel.next(); return false; });
+                        $('#carousel1-prev').bind('click', function(){ carousel.prev(); return false; });
+                    },
+                    buttonNextHTML: null,
+                    buttonPrevHTML: null
+                });
+                
+                $("#carousel2").jcarousel({
+                    scroll: 1,
+                    initCallback: function(carousel) {
+                        $('#carousel2-next').bind('click', function(){ carousel.next(); return false; });
+                        $('#carousel2-prev').bind('click', function(){ carousel.prev(); return false; });
+                    },
                     buttonNextHTML: null,
                     buttonPrevHTML: null
                 });
