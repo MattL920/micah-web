@@ -121,7 +121,7 @@ body {
 
 .content {
 	color: #DDD;
-	padding: 10px;
+	padding: 10px 10px 92px;
 }
 
 .section {
@@ -195,6 +195,39 @@ body {
     width: 10px;
     padding: 75px 10px;
     text-align: center;
+    position: relative;
+}
+
+.jcarousel-scroll a {
+    color: #DDD;
+    font-size: 24px;
+}
+
+.jcarousel-scroll a:hover {
+    text-decoration: none;
+    color: #C2E6EC;
+}
+
+.ca-nav span {
+    background: url("../img/arrows.png") no-repeat scroll left top transparent;
+    cursor: pointer;
+    height: 38px;
+    left: 5px;
+    margin-top: -10px;
+    opacity: 0.7;
+    position: absolute;
+    text-indent: -9000px;
+    top: 50%;
+    width: 25px;
+/*    z-index: 100;*/
+}
+.ca-nav span.ca-nav-next {
+    background-position: right top;
+    left: auto;
+    right: 5px;
+}
+.ca-nav span:hover {
+    opacity: 1;
 }
 
 .slide {
