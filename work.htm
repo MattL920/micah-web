@@ -58,7 +58,7 @@
     				<div id="carousel1" class="carousel">
     				    <ul class="thumbnails">
     					    <li class="slide">
-                                <a href="files/Amp__Goalies_.mov" class="thumbnail clip" title="Amp - Goalies">
+                                <a href="files/Amp__Goalies_.mp4" class="thumbnail clip" title="Amp - Goalies">
                                     <img src="img/Amp__Goalies_.png" alt="">
                                     <div>
                                         <h4>Amp</h4><p>Goalies</p>
@@ -282,6 +282,7 @@
         <script src="js/holder.js"></script>
         <script src="js/jquery.jcarousel.min.js"></script>
         <script src="js/jquery.colorbox-min.js"></script>
+        <script src="js/jquery.jqplayer-0.5.0.js"></script>
         
         <script type="text/javascript">
             $(document).ready(function() {
@@ -318,14 +319,37 @@
                     buttonPrevHTML: null
                 });
                 
-                $(".clip").colorbox({ html: function(){
-                    var url = $(this).attr('href');
+                $(".clip").colorbox({
+                    html: function(){
+                        var url = $(this).attr('href');
+                        // var html = "<div style='padding:10px; background:#fff;' id='video-player'></div>";
+                        // return html;
 
                     var html = "<div style='padding:10px; background:#fff;'>" +
                                "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
                                "</div>";
-                    return html;
-                }});
+
+
+        // $('#video-element').jQPlayer({videos:{standard:{source:{mp4:'movie.mp4'},label:'SD'}}});
+
+                    // var html = "<div style='padding:10px; background:#fff;' id='video-player'></div>";
+//                                // "<script>$('#video-player').jQPlayer({videos:{standard:{source:{mov:'" + url + "'},label:'SD'}}});";
+                        return html;
+                    },
+                    // onLoad: function() {
+//                         var url = $(this).attr('href');
+//                         $('#video-player').jQPlayer({
+//                             videos: {
+//                                 standard: {
+//                                     source: {
+//                                         mp4: url
+//                                     },
+//                                     label: 'SD'
+//                                 }
+//                             }
+//                         });
+//                     }
+                });
             });
         </script>
     </body>
