@@ -325,45 +325,32 @@
                         var url = $(this).attr('href');
                         // var html = "<div style='padding:10px; background:#fff;' id='video-player'></div>";
                         
-                        var html = "<div class='videoUiWrapper'>" + 
-                                   "<video id='video-player'><source src='" + url + "' type='video/mp4'>" +
+                        var html = "<div class='videoUiWrapper'><video id='video-player'>" + 
+                                   "<source src='" + url + "' type='video/mp4'>" +
+                                   "<source src='" + url.replace('mp4', 'ogg') + "' type='video/ogg'>" +
                                    "Your browser does not support the video tag." +
                                    "</video></div>";
+
+                        // var html = "<video id='video-player'>" + 
+//                                    "<source src='" + url + "' type='video/mp4'>" +
+//                                    "<source src='" + url.replace('mp4', 'ogg') + "' type='video/ogg'>" +
+//                                    "Your browser does not support the video tag." +
+//                                    "</video>";
 
                     // var html = "<div style='padding:10px; background:#fff;'>" +
 //                                "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
 //                                "</div>";
+
+                        // console.log(html);
                         return html;
                     },
                     onComplete: function() {
-                        $('#video-player').videoUI(); 
-                                                    // 
-                            //                         var url = $(this).attr('href');
-                            //                         console.log(url);
-                            //                         $('#video-player').jPlayer({
-                            //                             ready: function () {
-                            //                                 console.log('ready');
-                            //                                 $(this).jPlayer("setMedia", { 
-                            //                                     m4a: url,
-                            //                                     poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
-                            //                                 });
-                            //                             },
-                            //                             // swfPath: "../js",
-                            //                             swfPath: "http://jplayer.org/latest/js",
-                            //                             supplied: "m4a",
-                            //                             size: {
-                            //     width: "640px",
-                            //     height: "360px",
-                            //     cssClass: "jp-video-360p"
-                            // },
-                            // smoothPlayBar: true,
-                            // keyEnabled: true
-                            //                         });
+                        $('#video-player').videoUI();
+                        $.colorbox.resize({
+                            innerWidth: $('#video-player')[0].videoWidth + 4,
+                            innerHeight: $('#video-player')[0].videoHeight + 4,
+                        });
                     },
-                    // onComplete: function() {
-// 
-//                         $.colorbox.resize();
-//                     }
                 });
             });
         </script>
