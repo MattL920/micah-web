@@ -13,6 +13,7 @@
 		<link rel="icon" type="image/png" href="favicon.png">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/colorbox.css">
+        <link rel="stylesheet" href="css/video-default.css">
         <link rel="stylesheet" href="css/main.css">
 		<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,700' rel='stylesheet' type='text/css'>
 		
@@ -282,7 +283,7 @@
         <script src="js/holder.js"></script>
         <script src="js/jquery.jcarousel.min.js"></script>
         <script src="js/jquery.colorbox-min.js"></script>
-        <script src="js/jquery.jqplayer-0.5.0.js"></script>
+        <script src="js/jquery.video-ui.js"></script>
         
         <script type="text/javascript">
             $(document).ready(function() {
@@ -323,31 +324,45 @@
                     html: function(){
                         var url = $(this).attr('href');
                         // var html = "<div style='padding:10px; background:#fff;' id='video-player'></div>";
-                        // return html;
+                        
+                        var html = "<div class='videoUiWrapper'>" + 
+                                   "<video id='video-player'><source src='" + url + "' type='video/mp4'>" +
+                                   "Your browser does not support the video tag." +
+                                   "</video></div>";
 
-                    var html = "<div style='padding:10px; background:#fff;'>" +
-                               "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
-                               "</div>";
-
-
-        // $('#video-element').jQPlayer({videos:{standard:{source:{mp4:'movie.mp4'},label:'SD'}}});
-
-                    // var html = "<div style='padding:10px; background:#fff;' id='video-player'></div>";
-//                                // "<script>$('#video-player').jQPlayer({videos:{standard:{source:{mov:'" + url + "'},label:'SD'}}});";
+                    // var html = "<div style='padding:10px; background:#fff;'>" +
+//                                "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
+//                                "</div>";
                         return html;
                     },
-                    // onLoad: function() {
-//                         var url = $(this).attr('href');
-//                         $('#video-player').jQPlayer({
-//                             videos: {
-//                                 standard: {
-//                                     source: {
-//                                         mp4: url
-//                                     },
-//                                     label: 'SD'
-//                                 }
-//                             }
-//                         });
+                    onComplete: function() {
+                        $('#video-player').videoUI(); 
+                                                    // 
+                            //                         var url = $(this).attr('href');
+                            //                         console.log(url);
+                            //                         $('#video-player').jPlayer({
+                            //                             ready: function () {
+                            //                                 console.log('ready');
+                            //                                 $(this).jPlayer("setMedia", { 
+                            //                                     m4a: url,
+                            //                                     poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png" 
+                            //                                 });
+                            //                             },
+                            //                             // swfPath: "../js",
+                            //                             swfPath: "http://jplayer.org/latest/js",
+                            //                             supplied: "m4a",
+                            //                             size: {
+                            //     width: "640px",
+                            //     height: "360px",
+                            //     cssClass: "jp-video-360p"
+                            // },
+                            // smoothPlayBar: true,
+                            // keyEnabled: true
+                            //                         });
+                    },
+                    // onComplete: function() {
+// 
+//                         $.colorbox.resize();
 //                     }
                 });
             });

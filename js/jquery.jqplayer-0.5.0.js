@@ -467,16 +467,18 @@ var options;
 			if (!videoObj) {
 				videoObj = this.defaultVideo;
 			}
+            
+            return videoObj.source.mp4;
 			
-			if (($.browser.safari && !/Chrome[\/\s](\d+\.\d+)/.test(navigator.userAgent)) || $.browser.msie) {
-				return videoObj.source.mp4;
-			}
-			
-			if (videoObj.source.ogg) {
-				return videoObj.source.ogg;
-			}
-			
-			return videoObj.source.webm;
+			// if (($.browser.safari && !/Chrome[\/\s](\d+\.\d+)/.test(navigator.userAgent)) || $.browser.msie) {
+//                 return videoObj.source.mp4;
+//             }
+//             
+//             if (videoObj.source.ogg) {
+//                 return videoObj.source.ogg;
+//             }
+//             
+//             return videoObj.source.webm;
 		},
 		
 		hideControls: function (controls) {
