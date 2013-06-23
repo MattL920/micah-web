@@ -321,14 +321,9 @@
                 $(".clip").colorbox({ html: function(){
                     var url = $(this).attr('href');
 
-                    // var html = "<div style='padding:10px; background:#fff;'>" +
-//                                "<object classid='clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B' codebase='http://www.apple.com/qtactivex/qtplugin.cab'>" +
-//                                "<embed src='" + url + "' controller='true' autoplay='true' " +
-//                                "scale='tofit' cache='true' pluginspage='http://www.apple.com/quicktime/download/'>" +
-//                                "</object></div>";
-
-                var html = "<div style='padding:10px; background:#fff;'>" +
-                           "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object></div>";
+                    var html = "<div style='padding:10px; background:#fff;'>" +
+                               "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
+                               "</div>";
                     return html;
                 }});
             });
