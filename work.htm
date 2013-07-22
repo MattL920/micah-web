@@ -46,12 +46,12 @@
 			</div>
 		</div>
 		<div class="content container clearfix">
-			<div class="row">
+			<div class="row header-row" style="cursor: pointer">
 				<div class="section span12">
                     <h3 class="pull-left">sound design</h3> <hr/>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row body-row">
                 <div class="carousel-outer">
                     <div class="jcarousel-scroll ca-nav">
                         <span class="ca-nav-prev" id="carousel1-prev">Previous</span>
@@ -114,12 +114,12 @@
                 </div>
             </div>
             
-			<div class="row">
+			<div class="row header-row" style="cursor: pointer">
 				<div class="section span12">
                     <h3 class="pull-left">music and sound</h3> <hr/>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row body-row">
                 <div class="carousel-outer">
                     <div class="jcarousel-scroll ca-nav">
                         <span class="ca-nav-prev" id="carousel2-prev">Previous</span>
@@ -182,12 +182,12 @@
                 </div>
             </div>
 			
-			<div class="row">
+			<div class="row header-row" style="cursor: pointer">
 				<div class="section span12">
                     <h3 class="pull-left">long format</h3> <hr/>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row body-row">
                 <div class="carousel-outer">
                     <div class="jcarousel-scroll ca-nav">
                         <span class="ca-nav-prev" id="carousel3-prev">Previous</span>
@@ -250,12 +250,12 @@
                 </div>
             </div>
             
-			<div class="row">
+			<div class="row header-row" style="cursor: pointer">
 				<div class="section span12">
                     <h3 class="pull-left">radio</h3> <hr/>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row body-row">
 				<div class="span12">
                 </div>
             </div>
@@ -264,14 +264,15 @@
 
 		<div class="footer">
 			<div class="footer-inner container">
-				<div class="span3">
-					<address>
-						9 Alden Place Apt. 3C<br/>
-						Bronxville, NY 10708<br>
-						917-880-1923
-					</address>
-				</div>
-				<div class="span3 offset5 links pull-right">
+				<!-- <div class="span3">
+                    <address>
+                        9 Alden Place Apt. 3C<br/>
+                        Bronxville, NY 10708<br>
+                        917-880-1923
+                    </address>
+                </div> -->
+                <!-- <div class="span3 offset5 links pull-right"> -->
+                <div class="span3 offset8 links pull-right">
 					<a href="http://www.linkedin.com/in/micahkovacs"><img src="img/linkedin.png"></a>
 					<a href="http://www.soundcloud.com/micahkovacs"><img src="img/soundcloud.png"></a>
 				</div>
@@ -323,34 +324,21 @@
                 $(".clip").colorbox({
                     html: function(){
                         var url = $(this).attr('href');
-                        // var html = "<div style='padding:10px; background:#fff;' id='video-player'></div>";
-                        
-                        var html = "<div class='videoUiWrapper'><video id='video-player'>" + 
-                                   "<source src='" + url + "' type='video/mp4'>" +
-                                   "<source src='" + url.replace('mp4', 'ogg') + "' type='video/ogg'>" +
-                                   "Your browser does not support the video tag." +
-                                   "</video></div>";
 
-                        // var html = "<video id='video-player'>" + 
-//                                    "<source src='" + url + "' type='video/mp4'>" +
-//                                    "<source src='" + url.replace('mp4', 'ogg') + "' type='video/ogg'>" +
-//                                    "Your browser does not support the video tag." +
-//                                    "</video>";
-
-                    // var html = "<div style='padding:10px; background:#fff;'>" +
-//                                "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
-//                                "</div>";
-
-                        // console.log(html);
+                        var html = "<div style='padding:10px; background:#fff;'>" +
+                                   "<object><embed src='" + url + "' controller='true' autoplay='true' scale='tofit' cache='true'></object>" +
+                                   "</div>";
+                                   
                         return html;
                     },
-                    onComplete: function() {
-                        $('#video-player').videoUI();
-                        $.colorbox.resize({
-                            innerWidth: $('#video-player')[0].videoWidth + 4,
-                            innerHeight: $('#video-player')[0].videoHeight + 4,
-                        });
-                    },
+                    onComplete: function() { },
+                });
+                
+                $(".body-row").hide();
+                $(".header-row").click(function(){
+                    // $(this).toggle();
+                    // $(".body-row").toggle();
+                    $(this).next().slideToggle(200);
                 });
             });
         </script>

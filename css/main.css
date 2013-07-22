@@ -68,6 +68,12 @@ body {
 	padding: 10px;
 	border: 1px solid transparent;
 	font-variant: small-caps;
+    
+    -o-transition:.4s;
+    -ms-transition:.4s;
+    -moz-transition:.4s;
+    -webkit-transition:.4s;
+    transition:.4s;
 }
 
 .navbar a:hover {
@@ -168,6 +174,17 @@ body {
     height: 0;
     width: 100%;
 	margin: 20px 0 0 15px;
+    
+    -o-transition:.4s;
+    -ms-transition:.4s;
+    -moz-transition:.4s;
+    -webkit-transition:.4s;
+    transition:.4s;
+}
+
+.header-row:hover hr {
+    border-color: -moz-use-text-color -moz-use-text-color rgba(194, 230, 236, 0.45);
+    box-shadow: 0 0 5px rgba(194, 230, 236, 0.25);
 }
 
 /*.slide {
@@ -219,7 +236,12 @@ body {
     text-indent: -9000px;
     top: 50%;
     width: 25px;
-/*    z-index: 100;*/
+    
+    -o-transition:.4s;
+    -ms-transition:.4s;
+    -moz-transition:.4s;
+    -webkit-transition:.4s;
+    transition:.4s;
 }
 .ca-nav span.ca-nav-next {
     background-position: right top;
@@ -233,6 +255,12 @@ body {
 .slide {
 	position: relative;
     width: 200px;
+    
+    -o-transition:.4s;
+    -ms-transition:.4s;
+    -moz-transition:.4s;
+    -webkit-transition:.4s;
+    transition:.4s;
 }
 .slide div {
 	background-color: rgba(0, 0, 0, 0.6);
